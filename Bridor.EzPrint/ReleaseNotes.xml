@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<release_notes>
+
+  <release version="1.0.6" date="2013-09-09" by="Fernando Grijalba">
+    <file name="SelectionViewModel.cs">
+      <note>Modified ProcessPage() to clear the selections after printing the product.</note>
+    </file>
+  </release>
+
+  <release version="1.0.3 to 1.0.5" by ="Fernando Grijalba">
+    These release were bug fixes during UTA.  1.0.5 was the first release to go into production.
+  </release>
+  
+  <release version="1.0.2" date="2013-08-09" by="Fernando Grijalba">
+    <file name="app.config">
+      <note>The settings for PathCommand were set for User instead of Application. Changed to Application.</note>
+    </file>
+  </release>
+  
+  <release version="1.0.1" date="2013-08-07" by="Fernando Grijalba">
+    <file name="Repository.cs">
+      <note>Modify all access functions to exclude the fields removed in the database</note>
+    </file>
+    <file name="Plant.cs">
+      <note>Remove the Number property</note>
+    </file>
+    <file name="ProductionLine.cs">
+      <note>Remove the Number property</note>
+    </file>
+    <file name="Template.cs">
+      <note>Remove the Number property</note>
+    </file>
+    <file name="Database">
+      <note>Remove field NO_USINE from USINE table as requested by Manon</note>
+      <note>Remove field NO_LIGNE from LIGNE table as requested by Manon</note>
+      <note>Remove field NO_TEMPLATE from TEMPLATE table as requested by Manon</note>
+      <note>Modified fields NO_TEMPLATE_# TO ID_TEMPLATE_# on ETIQUETTE table as NO_TEMPLATE was removed from TEMPLATE table</note>
+      <note>Added field ID_LIGNE to ETIQUETTE table as per Manon.  This field is not used in the application</note>
+    </file>
+  </release>
+  
+</release_notes>

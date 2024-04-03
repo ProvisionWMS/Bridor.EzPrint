@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Bridor.EzPrint.Controls.TemplateSelectionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Bridor.EzPrint.Resources"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Verdana" FontSize="22" FontWeight="Bold">
+            <Run Text="{Binding Source={x:Static local:UIResources.PlantLabel}, Mode=OneWay}" />
+            <Run Text="{Binding Plant.Name}" />
+            <Run Text="{Binding Source={x:Static local:UIResources.LineLabel}, Mode=OneWay}" />
+            <Run Text="{Binding ProductionLine.Name}" />
+        </TextBlock>
+        <DataGrid
+            ItemsSource="{Binding ProductionLine.Templates}"
+            SelectedItem="{Binding Template}"
+            Style="{StaticResource SelectionGridStyle}"
+            Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{Binding Source={x:Static local:UIResources.TemplateSelectionListHeader}}" Binding="{Binding Description}" IsReadOnly="True" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Text="{Binding Source={x:Static local:UIResources.TemplateSelectionDescription}}" Style="{StaticResource GridSelectionMessage}" Grid.Row="2" />
+    </Grid>
+</UserControl>
